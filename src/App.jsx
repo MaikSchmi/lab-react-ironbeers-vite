@@ -8,7 +8,7 @@ import NewBeer from './components/NewBeer'
 import RandomBeer from './components/RandomBeer'
 
 function App() {
-
+  
   return (
     <div className="App">
       <Routes>
@@ -17,7 +17,6 @@ function App() {
         <Route path="/:_id" element={<BeerDetails /> } />
         <Route path="/random-beer" element={<RandomBeer /> } />
         <Route path="/new-beer" element={<NewBeer /> } />
-        <Route path="/search?q={query}" element={<RandomBeer /> } />
       </Routes>
     </div>
   )

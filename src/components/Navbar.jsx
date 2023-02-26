@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
-    <nav>
+    <nav className="nav">
       <Link to="/">
-        <img src="../../src/assets/home.png" alt="home" style={{width: "100vw"}}/>
+        <img src="../../src/assets/home.png" alt="home" className="navImg"/>
       </Link>
     </nav>
   )

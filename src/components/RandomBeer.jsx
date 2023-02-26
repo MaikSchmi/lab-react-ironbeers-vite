@@ -15,12 +15,12 @@ function RandomBeer() {
             .catch((err) => console.log("Error fetching random beer: ", err));
     }
 
-    useEffect(() => {
-        getRandomBeer();
-    }, [])
+  useEffect(() => {
+    getRandomBeer();
+  }, [])
 
   return isLoading ? <div>Loading data...</div> : (
-    <div>
+    <div className="beerCardCtn">
       <>
         <Navbar />
         <div className="beerDetailsCtn">

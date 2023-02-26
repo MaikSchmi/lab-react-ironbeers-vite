@@ -24,6 +24,7 @@ function BeerDetails() {
     return isLoading ? <div>Loading details... </div> : (
       <>
         <Navbar />
+        <div className="beerCardCtn">
         <div className="beerDetailsCtn">
           <div className="beerDetailsImgCtn">
             <img src={beer.image_url} alt={beer.name} />
@@ -44,6 +45,7 @@ function BeerDetails() {
               <p className="beerDetailsContributor">{beer.contributed_by}</p>
             </div>
           </div>
+        </div>
         </div>
       </>
   )

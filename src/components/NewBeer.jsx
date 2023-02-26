@@ -30,55 +30,57 @@ function NewBeer() {
         setDescription("");
         setFirstBrewed("");
         setBrewersTips("");
-        setAttenuationLevel(0);
+        setAttenuationLevel(10);
         setContributedBy("");
     }
 
   return (
     <>
         <Navbar />
-        <div className="newBeerCtn">
-            <h1>Create a new beer</h1>
-        <form className="newBeerFrm" onSubmit={handleFormSubmit}>
-            <div className="newBeerFrmInputCtn">
-                <label>Name<br/>
-                    <input type="text" value={name} onChange={(e) => setName(e.target.value)}/>
-                </label>
+        <div className="beerCardCtn">
+            <div className="newBeerCtn">
+                <h1>Create a new beer</h1>
+                <form className="newBeerFrm" onSubmit={handleFormSubmit}>
+                    <div className="newBeerFrmInputCtn">
+                        <label>Name<br/>
+                            <input type="text" value={name} onChange={(e) => setName(e.target.value)}/>
+                        </label>
+                    </div>
+                    <div className="newBeerFrmInputCtn">
+                        <label>Tagline<br/>
+                            <input type="text" value={tagline} onChange={(e) => setTagline(e.target.value)}/>
+                        </label>
+                    </div>
+                    <div className="newBeerFrmInputCtn descriptionCtn">
+                        <label>Description<br/>
+                            <input type="text" value={description} onChange={(e) => setDescription(e.target.value)}/>
+                        </label>
+                    </div>
+                    <div className="newBeerFrmInputCtn">
+                        <label>First Brewed<br/>
+                            <input type="text" value={firstBrewed} onChange={(e) => setFirstBrewed(e.target.value)}/>
+                        </label>
+                    </div>
+                    <div className="newBeerFrmInputCtn">
+                        <label>Brewer's Tips<br/>
+                            <input type="text" value={brewersTips} onChange={(e) => setBrewersTips(e.target.value)}/>
+                        </label>
+                    </div>
+                    <div className="newBeerFrmInputCtn">
+                        <label>Attenuation Level<br/>
+                            <input type="number" value={attenuationLevel} onChange={(e) => setAttenuationLevel(e.target.value)}/>
+                        </label>
+                    </div>
+                    <div className="newBeerFrmInputCtn">
+                        <label>Contributed By<br/>
+                            <input type="text" value={contributedBy} onChange={(e) => setContributedBy(e.target.value)}/>
+                        </label>
+                    </div>
+                    <div className="newBeerBtn">
+                        <button type="submit">Add New</button>
+                    </div>
+                </form>
             </div>
-            <div className="newBeerFrmInputCtn">
-                <label>Tagline<br/>
-                    <input type="text" value={tagline} onChange={(e) => setTagline(e.target.value)}/>
-                </label>
-            </div>
-            <div className="newBeerFrmInputCtn descriptionCtn">
-                <label>Description<br/>
-                    <input type="text" value={description} onChange={(e) => setDescription(e.target.value)}/>
-                </label>
-            </div>
-            <div className="newBeerFrmInputCtn">
-                <label>First Brewed<br/>
-                    <input type="text" value={firstBrewed} onChange={(e) => setFirstBrewed(e.target.value)}/>
-                </label>
-            </div>
-            <div className="newBeerFrmInputCtn">
-                <label>Brewer's Tips<br/>
-                    <input type="text" value={brewersTips} onChange={(e) => setBrewersTips(e.target.value)}/>
-                </label>
-            </div>
-            <div className="newBeerFrmInputCtn">
-                <label>Attenuation Level<br/>
-                    <input type="number" value={attenuationLevel} onChange={(e) => setAttenuationLevel(e.target.value)}/>
-                </label>
-            </div>
-            <div className="newBeerFrmInputCtn">
-                <label>Contributed By<br/>
-                    <input type="text" value={contributedBy} onChange={(e) => setContributedBy(e.target.value)}/>
-                </label>
-            </div>
-            <div className="newBeerBtn">
-                <button type="submit">Add New</button>
-            </div>
-        </form>
         </div>
     </>
   )

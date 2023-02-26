@@ -6,6 +6,7 @@ import Navbar from './Navbar'
 function Beers() {
   const [beers, setBeers] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchResult, setSearchResult] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   
   const getBeers = () => {
@@ -18,6 +19,14 @@ function Beers() {
   }
 
   useEffect(() => {
+    axios.get(`https://ih-beers-api2.herokuapp.com/beers/search?q=${searchTerm}`)
+      .then((response) => {
+        setBeers(response.data);
+      })
+      .catch((err) => console.log("Error with the search: ", err));
+  }, [searchTerm])
+  
+  useEffect(() => {
     getBeers();
   }, [])
 
@@ -26,22 +35,24 @@ function Beers() {
     <div>
       <Navbar />
       <div className="searchInputCtn">
-        <input className="searchInput" type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+        <input className="searchInput" type="text" onChange={(e) => setSearchTerm(e.target.value)} />
       </div>
-      {beers.filter(beer => beer.name.startsWith(searchTerm)).map((beer) => {
+      {beers.map((beer) => {
         return(
-          <Link to={"/" + beer._id} key={beer._id} style={{textDecoration: "none", color: "black"}}>
-            <div className="beerCard">
-              <div className="beerCardImgCtn">
-                <img src={beer.image_url} alt={beer.name} />
+          <div className="beerCardCtn" key={beer._id}>
+            <Link to={"/" + beer._id} style={{textDecoration: "none", color: "black"}}>
+              <div className="beerCard">
+                <div className="beerCardImgCtn">
+                  <img src={beer.image_url} alt={beer.name} />
+                </div>
+                <div className="beerCardInfoCtn">
+                  <h3>{beer.name}</h3>
+                  <h4>{beer.tagline}</h4>
+                  <p>Created by: {beer.name}</p>
+                </div>
               </div>
-              <div className="beerCardInfoCtn">
-                <h3>{beer.name}</h3>
-                <h4>{beer.tagline}</h4>
-                <p>Created by: {beer.name}</p>
-              </div>
-            </div>
-          </Link>
+            </Link>
+          </div>
         );
       })}
     </div>
