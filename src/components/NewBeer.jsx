@@ -36,7 +36,6 @@ function NewBeer() {
 
   return (
     <>
-        <Navbar />
         <div className="beerCardCtn">
             <div className="newBeerCtn">
                 <h1>Create a new beer</h1>

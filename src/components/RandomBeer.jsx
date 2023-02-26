@@ -22,7 +22,6 @@ function RandomBeer() {
   return isLoading ? <div>Loading data...</div> : (
     <div className="beerCardCtn">
       <>
-        <Navbar />
         <div className="beerDetailsCtn">
           <div className="beerDetailsImgCtn">
             <img src={randomBeer.image_url} alt={randomBeer.name} />

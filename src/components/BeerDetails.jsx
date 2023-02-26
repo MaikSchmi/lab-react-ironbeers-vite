@@ -23,7 +23,6 @@ function BeerDetails() {
 
     return isLoading ? <div>Loading details... </div> : (
       <>
-        <Navbar />
         <div className="beerCardCtn">
         <div className="beerDetailsCtn">
           <div className="beerDetailsImgCtn">

@@ -33,7 +33,6 @@ function Beers() {
   return (
     isLoading ? <div>Loading...</div> : 
     <div>
-      <Navbar />
       <div className="searchInputCtn">
         <input className="searchInput" type="text" onChange={(e) => setSearchTerm(e.target.value)} />
       </div>
